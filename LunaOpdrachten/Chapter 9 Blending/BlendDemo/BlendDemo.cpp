@@ -504,7 +504,7 @@ void BlendApp::BuildLandGeometryBuffers()
  
 	GeometryGenerator geoGen;
 
-	geoGen.CreateGrid(160.0f, 160.0f, 50, 50, grid);
+	geoGen.CreateGrid(20.0f, 200.0f, 30, 60, grid);
 
 	mLandIndexCount = grid.Indices.size();
 
@@ -519,8 +519,7 @@ void BlendApp::BuildLandGeometryBuffers()
 		XMFLOAT3 p = grid.Vertices[i].Position;
 
 		p.y = GetHillHeight(p.x, p.z);
-		p.y = -50.0f;
-
+		p.y = 0.0f;
 
 		vertices[i].Pos    = p;
 		vertices[i].Normal = GetHillNormal(p.x, p.z);
